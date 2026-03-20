@@ -1,0 +1,294 @@
+.home-portfolio-page {
+  --portfolio-bg: #0f0f1a;
+  --portfolio-text: #edf2ff;
+  --portfolio-muted: #a9b7dc;
+  --electric-blue: #4b90ff;
+  --cyber-pink: #ff4b91;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background: var(--portfolio-bg);
+  color: var(--portfolio-text);
+  font-family: 'Poppins', 'Outfit', sans-serif;
+}
+
+.portfolio-ambient {
+  position: absolute;
+  border-radius: 999rem;
+  pointer-events: none;
+  filter: blur(5rem);
+  z-index: 0;
+  animation: ambientFloat 9s ease-in-out infinite alternate;
+}
+
+.glow-top-left {
+  width: 38vw;
+  height: 38vw;
+  max-width: 24rem;
+  max-height: 24rem;
+  left: -12vw;
+  top: -10vw;
+  background: rgba(75, 144, 255, 0.32);
+}
+
+.glow-top-right {
+  width: 42vw;
+  height: 42vw;
+  max-width: 28rem;
+  max-height: 28rem;
+  right: -14vw;
+  top: -14vw;
+  background: rgba(149, 87, 255, 0.24);
+}
+
+.glow-bottom {
+  width: 44vw;
+  height: 44vw;
+  max-width: 30rem;
+  max-height: 30rem;
+  left: 35vw;
+  bottom: -25vw;
+  background: rgba(255, 75, 145, 0.22);
+}
+
+.wabi-entrance {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  background: radial-gradient(circle at 50% 25%, rgba(75, 144, 255, 0.2), rgba(15, 15, 26, 0.96));
+  display: grid;
+  place-items: center;
+  text-align: center;
+  align-content: center;
+  gap: 1.2rem;
+  padding: 1.2rem;
+  will-change: transform, opacity;
+}
+
+.entrance-kicker {
+  font-size: clamp(0.78rem, 1.7vw, 0.95rem);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(215, 227, 255, 0.76);
+}
+
+.wabi-word {
+  border: none;
+  background: transparent;
+  cursor: default;
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(0.2rem, 1.4vw, 0.9rem);
+  padding: 0;
+}
+
+.wabi-word:focus-visible {
+  outline: 0.18rem solid rgba(75, 144, 255, 0.5);
+  outline-offset: 0.8rem;
+  border-radius: 1rem;
+}
+
+.wabi-letter {
+  font-size: clamp(4rem, 16vw, 11rem);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  color: #6366f1;
+  filter: drop-shadow(0 0 1.1rem rgba(99, 102, 241, 0.35));
+  will-change: transform, opacity;
+}
+
+.entrance-hint {
+  font-size: clamp(0.92rem, 2vw, 1.08rem);
+  color: rgba(193, 207, 241, 0.86);
+}
+
+.dashboard-shell {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  width: min(94vw, 82rem);
+  margin: 0 auto;
+  padding: clamp(1.2rem, 3vw, 2.4rem) clamp(0.95rem, 2.4vw, 2rem) clamp(1.8rem, 4vw, 3.2rem);
+  display: grid;
+  align-content: center;
+  gap: clamp(1.2rem, 2.4vw, 1.8rem);
+}
+
+.dashboard-hero {
+  border: 0.06rem solid rgba(168, 186, 255, 0.24);
+  border-radius: 1.3rem;
+  background: linear-gradient(140deg, rgba(34, 40, 68, 0.72), rgba(20, 24, 42, 0.66));
+  -webkit-backdrop-filter: blur(0.85rem);
+  backdrop-filter: blur(0.85rem);
+  padding: clamp(1rem, 2.6vw, 1.7rem);
+}
+
+.dashboard-kicker {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  color: rgba(180, 197, 238, 0.84);
+}
+
+.dashboard-hero h1 {
+  margin-top: 0.6rem;
+  font-size: clamp(1.7rem, 5vw, 3.2rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.dashboard-hero h1 span {
+  color: rgba(150, 170, 226, 0.8);
+}
+
+.dashboard-hero p {
+  margin-top: 0.65rem;
+  max-width: 44rem;
+  font-size: clamp(0.95rem, 1.8vw, 1.08rem);
+  line-height: 1.55;
+  color: var(--portfolio-muted);
+}
+
+.dashboard-actions {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.go-gemini {
+  border: none;
+  border-radius: 0.9rem;
+  padding: 0.75rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.96rem;
+  color: #ffffff;
+  background: linear-gradient(115deg, #4b90ff, #825fff, #ff4b91);
+  box-shadow: 0 0.8rem 1.8rem rgba(75, 144, 255, 0.3);
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.go-gemini:hover {
+  transform: translateY(-0.08rem);
+  box-shadow: 0 1rem 2.1rem rgba(255, 75, 145, 0.3);
+}
+
+.status-pill {
+  border: 0.06rem solid rgba(161, 183, 255, 0.32);
+  border-radius: 999rem;
+  padding: 0.53rem 0.84rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  font-size: 0.84rem;
+  color: rgba(194, 210, 246, 0.92);
+  background: rgba(38, 48, 84, 0.46);
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.8rem, 1.8vw, 1.1rem);
+}
+
+.feature-card {
+  min-height: 21rem;
+  border-radius: 1.15rem;
+  border: 0.06rem solid rgba(176, 197, 255, 0.3);
+  background: linear-gradient(165deg, rgba(38, 45, 76, 0.74), rgba(18, 22, 38, 0.6));
+  -webkit-backdrop-filter: blur(0.65rem);
+  backdrop-filter: blur(0.65rem);
+  box-shadow:
+    inset 0 0 0.1rem rgba(255, 255, 255, 0.2),
+    0 1.1rem 2.4rem rgba(9, 12, 26, 0.58),
+    0 0 2rem rgba(75, 144, 255, 0.12);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-0.16rem);
+  border-color: rgba(214, 227, 255, 0.6);
+  box-shadow:
+    inset 0 0 0.1rem rgba(255, 255, 255, 0.22),
+    0 1.3rem 2.6rem rgba(9, 12, 26, 0.62),
+    0 0 2.4rem rgba(75, 144, 255, 0.18);
+}
+
+@keyframes ambientFloat {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0.8rem, -0.8rem, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-ambient {
+    animation: none;
+  }
+
+  .feature-card,
+  .go-gemini {
+    transition: none;
+  }
+}
+
+.feature-icon-wrap {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 0.78rem;
+  display: grid;
+  place-items: center;
+  border: 0.06rem solid rgba(179, 198, 255, 0.34);
+  background: rgba(61, 86, 180, 0.32);
+}
+
+.feature-card h2 {
+  margin-top: 0.85rem;
+  font-size: 1.28rem;
+  letter-spacing: -0.01em;
+}
+
+.feature-card p {
+  margin-top: 0.52rem;
+  font-size: 0.93rem;
+  line-height: 1.53;
+  color: rgba(186, 201, 235, 0.88);
+}
+
+@media (max-width: 62rem) {
+  .feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 46rem) {
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-shell {
+    align-content: start;
+    padding-top: 1.1rem;
+  }
+
+  .feature-card {
+    min-height: 18.4rem;
+  }
+}

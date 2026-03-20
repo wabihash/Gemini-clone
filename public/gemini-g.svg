@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Gemini Clone G Logo</title>
+  <desc id="desc">A clearly shaped letter G with Gemini-like gradient styling.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#111827" />
+    </linearGradient>
+    <linearGradient id="gStroke" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#34d399" />
+    </linearGradient>
+    <radialGradient id="halo" cx="50%" cy="46%" r="62%">
+      <stop offset="0%" stop-color="#93c5fd" stop-opacity="0.44" />
+      <stop offset="100%" stop-color="#93c5fd" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <rect width="512" height="512" rx="116" fill="url(#bg)" />
+  <circle cx="256" cy="256" r="182" fill="url(#halo)" />
+  <circle cx="256" cy="256" r="186" fill="none" stroke="rgba(148,163,184,0.2)" stroke-width="10" />
+
+  <path
+    d="M360 170c-27-25-62-38-103-38-87 0-148 57-148 124s61 124 148 124c58 0 101-24 121-66"
+    fill="none"
+    stroke="url(#gStroke)"
+    stroke-width="38"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <path
+    d="M258 256h132"
+    fill="none"
+    stroke="url(#gStroke)"
+    stroke-width="34"
+    stroke-linecap="round"
+  />
+  <path
+    d="M390 256v64"
+    fill="none"
+    stroke="url(#gStroke)"
+    stroke-width="34"
+    stroke-linecap="round"
+  />
+
+  <path
+    d="M398 108l10 20 20 10-20 10-10 20-10-20-20-10 20-10z"
+    fill="#93c5fd"
+    opacity="0.9"
+  />
+</svg>
