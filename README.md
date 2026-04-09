@@ -1,6 +1,6 @@
 # Gemini Clone
 
-A modern Gemini-inspired AI chat experience built with React and Vite, designed to showcase product thinking and clean frontend engineering in a portfolio.
+A client-ready Gemini-inspired AI chat app built with React and Vite, showcasing production-style UX, multimodal prompts, and polished frontend execution for freelance delivery.
 
 ## What Problem This Solves
 
@@ -26,17 +26,21 @@ I built this project end-to-end as a solo frontend implementation, including:
 
 ## Preview
 
-### 1) Chat Interface
+### Demo Flow (GIF)
 
-![Chat interface preview](public/screenshots/chat-interface-preview.svg)
+![Gemini clone demo flow](public/screenshots/demo-flow.gif)
 
-### 2) Animated Landing Experience
+### 1) Home Dashboard
 
-![Landing experience preview](public/screenshots/landing-preview.svg)
+![Home dashboard screenshot](public/screenshots/home-dashboard.png)
+
+### 2) Chat Interface
+
+![Chat interface screenshot](public/screenshots/chat-interface.png)
 
 ### 3) Mobile Responsive View
 
-![Mobile view preview](public/screenshots/mobile-preview.svg)
+![Mobile chat screenshot](public/screenshots/mobile-chat.png)
 
 ## Tech Stack
 
