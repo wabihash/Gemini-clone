@@ -75,7 +75,6 @@ async function runChat(prompt, options = {}) {
       const result = await chat.sendMessage(messageParts)
       const response = result.response
       const text = response.text()
-      console.log(`Gemini response (${modelName}):`, text)
       return text
     } catch (error) {
       lastError = error

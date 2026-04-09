@@ -1,7 +1,7 @@
 import React, { useContext, useRef, useState } from 'react'
 import './Main.css'
 import { assets } from '../../assets/assets'
-import { Context } from '../../Context/Context'
+import { Context } from '../../Context/AppContext'
 
 const Main = ({ onBackHome }) => {
   const [uploadedFiles, setUploadedFiles] = useState([])
@@ -49,6 +49,31 @@ const Main = ({ onBackHome }) => {
   const isUtilityPage = Boolean(activePageContent)
 
   const canShowSend = input.trim().length > 0
+
+  const renderResponseText = (text) => {
+    const normalized = String(text || '')
+    const lines = normalized.split('*').filter((line) => line.length)
+
+    return lines.map((line, lineIndex) => {
+      const parts = line.split(/(\*\*.*?\*\*)/g)
+
+      return (
+        <React.Fragment key={`line-${lineIndex}`}>
+          {parts.map((part, partIndex) => {
+            const isBold = part.startsWith('**') && part.endsWith('**')
+            const value = isBold ? part.slice(2, -2) : part
+
+            return isBold ? (
+              <strong key={`part-${lineIndex}-${partIndex}`}>{value}</strong>
+            ) : (
+              <React.Fragment key={`part-${lineIndex}-${partIndex}`}>{value}</React.Fragment>
+            )
+          })}
+          {lineIndex < lines.length - 1 ? <br /> : null}
+        </React.Fragment>
+      )
+    })
+  }
 
   const fileToBase64 = (file) => {
     return new Promise((resolve, reject) => {
@@ -353,7 +378,7 @@ const Main = ({ onBackHome }) => {
                       <hr />
                     </div>
                   ) : (
-                    <p dangerouslySetInnerHTML={{ __html: resultData }}></p>
+                    <p>{renderResponseText(resultData)}</p>
                   )}
                 </div>
               </div>

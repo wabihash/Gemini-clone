@@ -1,7 +1,6 @@
-import { createContext, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
+import { Context } from './AppContext'
 import runChat from '../Config/gemini'
-
-export const Context = createContext()
 
 const PROMPTS_STORAGE_KEY = 'gemini_clone_recent_prompts'
 
@@ -79,14 +78,7 @@ const ContextProvider = (props) => {
 
     try {
       const response = await runChat(activePrompt, { imageDataList: normalizedImageDataList })
-      let formattedResponse = response
-
-      // Convert **bold** to <b>bold</b>
-      formattedResponse = formattedResponse.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>')
-      // Convert remaining * markers to line breaks
-      formattedResponse = formattedResponse.replace(/\*/g, '<br/>')
-
-      setResultData(formattedResponse)
+      setResultData(response)
       return response
     } catch (apiError) {
       const rawMessage = String(apiError?.message || '')

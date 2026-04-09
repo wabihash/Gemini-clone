@@ -6,6 +6,8 @@ const LETTERS = ['W', 'A', 'B', 'I']
 const ENTRY_STAGGER = 0.08
 const DROP_STAGGER = 0.1
 const JOIN_TO_DROP_DELAY_MS = 1700
+const MotionSection = motion.section
+const MotionSpan = motion.span
 
 const WabiEntrance = ({ onComplete }) => {
   const [phase, setPhase] = useState('join')
@@ -50,11 +52,11 @@ const WabiEntrance = ({ onComplete }) => {
   }, [onComplete])
 
   return (
-    <motion.section className="wabi-entrance">
+    <MotionSection className="wabi-entrance">
       <p className="entrance-kicker">Wabi Portfolio</p>
       <div className="wabi-word" aria-label="Wabi animated title">
         {LETTERS.map((letter, index) => (
-          <motion.span
+          <MotionSpan
             key={letter}
             className="wabi-letter"
             initial={{
@@ -84,11 +86,11 @@ const WabiEntrance = ({ onComplete }) => {
             }
           >
             {letter}
-          </motion.span>
+          </MotionSpan>
         ))}
       </div>
       <p className="entrance-hint">Loading Gemini experience...</p>
-    </motion.section>
+    </MotionSection>
   )
 }
 
